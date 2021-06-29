@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-
+//Here we are specifying what values a new workout can have / are required to have. 
 
 const workoutSchema = new Schema ({
     exercises: [{
@@ -17,24 +17,24 @@ const workoutSchema = new Schema ({
             required: ""
         },
         weight: {
-
+            type: Number
         },
         sets: {
-
+            type: Number
         },
         reps: {
-
+            type: Number
         },
         duration: {
             type: Number,
             required: ""
         },
         distance: {
-            type: Number,
+            type: Number
         },
     }]
 });
 
-const workoutSchema = mongoose.model("Transaction", transactionSchema);
+const workoutSchema = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;
