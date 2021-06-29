@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-//Here we are specifying what values a new workout can have / are required to have. 
+//Here we are specifying what values a new workout can have / or are required to have. 
 
 const workoutSchema = new Schema ({
+    day: {
+        type: Date, 
+        default: () => new Date()
+    },
     exercises: [{
-        
         name: {
             type: String,
             required: ""
@@ -35,6 +38,6 @@ const workoutSchema = new Schema ({
     }]
 });
 
-const workoutSchema = mongoose.model("Workout", workoutSchema);
+const Workout = mongoose.model("Workout", workoutSchema);
 
 module.exports = Workout;

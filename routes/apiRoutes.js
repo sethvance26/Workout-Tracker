@@ -2,10 +2,10 @@ const router = require("express").Router();
 
 const Workout = require("../models/workout.js");
 
-//Post route for creating a new workout
+//Post route below for creating a new workout
 
-router.post("/api/workouts", ({ body }, res) => {
-  Workout.create(body)
+router.post("/api/workouts", (req, res) => {
+  Workout.create({})
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -14,7 +14,7 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-//Put route for updating workout by id
+//Put route below for updating workout by id
 
 router.put("/api/workouts/:id", ({ body , params }, res) => {
   Workout.findbyIdAndUpdate(
@@ -40,5 +40,18 @@ router.get("/api/workouts", (req, res) => {
       res.status(400).json(err);
     });
 });
+
+//Delete route below to remove a workout from our list
+
+router.delete("/api/workouts/delete", ({ body }, res) => {
+  Workout.findbyIdAndRemove(body.id)
+    .then(() => {
+      res.json(true);
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+});
+
 
 module.exports = router;
