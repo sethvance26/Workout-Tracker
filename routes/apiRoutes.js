@@ -12,8 +12,12 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-router.post("/api/workouts/:id", ({ body }, res) => {
-  Workout.insertMany(body)
+router.put("/api/workouts/:id", ({ body , params }, res) => {
+  Workout.findbyIdAndUpdate(
+    params.id,
+    {$push: {exercises: body}},
+    {new: true, runValidators: true}
+  )
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -23,8 +27,7 @@ router.post("/api/workouts/:id", ({ body }, res) => {
 });
 
 router.get("/api/workouts", (req, res) => {
-  Workout.find({})
-    .sort({ date: -1 })
+  Workout.find()
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
