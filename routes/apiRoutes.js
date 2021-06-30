@@ -1,5 +1,4 @@
 const router = require("express").Router();
-
 const Workout = require("../models/workout.js");
 
 //Post route below for creating a new workout
