@@ -17,7 +17,7 @@ router.post("/api/workouts", (req, res) => {
 //Put route below for updating workout by id
 
 router.put("/api/workouts/:id", ({ body , params }, res) => {
-  Workout.findbyIdAndUpdate(
+  Workout.findByIdAndUpdate(
     params.id,
     {$push: {exercises: body}},
     {new: true, runValidators: true}
