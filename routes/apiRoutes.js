@@ -45,12 +45,17 @@ router.get("/api/workouts", (req, res) => {
 
 
 //Get route to retrieve workouts, and add total duration of a workout
-router.get("/api/workouts", (req, res) => {
-  Workout.find()
-  .then(dbWorkout => {
-    const updated
-  })
-})
+router.get("/api/workouts/range", (req, res) => {
+  Workout.aggregate([
+    { $addFields: {totalDuration: { $sum: '$exercises.duration'} } }
+  ])
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+});
 
 
 //Delete route below to remove a workout from our list
