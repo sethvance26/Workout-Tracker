@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //Here we are specifying what values a new workout can have / or are required to have. 
-
+//We can get all this information from viewing what we had on the front end previously. 
 const workoutSchema = new Schema ({
     day: {
         type: Date, 
