@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   This project is licensed under the MIT license. URL Here - (https://opensource.org/licenses/MIT)
 ## Project Name:
-Workout-Tracker
+Workout Tracker
 
 ## Table of Contents
 - [Title](#Project-Name)
@@ -15,7 +15,7 @@ Workout-Tracker
 - [Heroku-Link](#Heroku-Link)
 
 ## Description
-Workout Tracker is a application where users can track their workouts, and create new workouts as well. Users can log multiple exercises in a workout they've done for that day with functionality for different types of exercises, different amounts of reps/sets, weight amounts, duration of the exercise, or distance traveled for cardio. Users can also view their dashboard, which shows their workout information graphed over time. 
+Workout Tracker is an application where users can track their workouts, and create new workouts as well. Users can log multiple exercises in a workout they've done for that day with functionality for different types of exercises, different amounts of reps/sets, weight amounts, duration of the exercise, or distance traveled for cardio. Users can also view their dashboard, which shows their workout information graphed over time. Built with a MongoDB database, Node.js and Express server in Javascript. 
 
 ## Contact
 [Email]-(sethvance26@gmail.com)
